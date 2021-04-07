@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, BrowserRouter as Router } from "react-router-dom";
 
 export default ()=>{
     return(
@@ -129,8 +130,8 @@ export default ()=>{
                     </div>
                     <div className="col-auto ml-auto">
                         <div className="tt-account-btn">
-                            <a href="page-login.html" className="btn btn-primary">Log in</a>
-                            <a href="page-signup.html" className="btn btn-secondary">Sign up</a>
+                            <Link className="btn btn-primary" to="/login">Log In</Link>
+                            <Link className="btn btn-secondary" to="/signup">Sign Up</Link>
                         </div>
                     </div>
                 </div>
