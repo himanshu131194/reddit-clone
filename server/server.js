@@ -2,12 +2,11 @@ import CONFIG from './../config'
 import mongoose from 'mongoose'
 mongoose.Promise = global.Promise
 
-// mongoose.connect(CONFIG.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(CONFIG.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true});
 
-// mongoose.connection.on('error', ()=>{
-// 	 throw new Error('unable to connect to database')
-// })
-
+mongoose.connection.on('error', ()=>{
+	 throw new Error('unable to connect to database')
+})
 
 import app from './express'
 

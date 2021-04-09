@@ -2,8 +2,8 @@ export default {
    env : process.env.NODE_ENV || 'development',
    port : process.env.PORT || 3000,
    API_URL: "http://localhost:3000",
-   MONGO_URI: "mongodb://boobsboy:boobsboylovesit@128.199.20.103:27017/boobsboy",
-   COOKIEKEY: 'mycookiesecret',
+   MONGO_URI: "mongodb+srv://form19:form19lovesit@cluster0.ilhg1.mongodb.net/form19?retryWrites=true&w=majority",
+   JWT_SECRET: "mysecret",
    DB:{
       DEFAULT_COUNT : 0,
       DEFAULT_CONTENT_TYPE : 1,  //1-images 2- videos
@@ -32,3 +32,4 @@ export default {
       }
    }
 }
+

@@ -1,6 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {loginAction} from './LoginActions';
 
 export default ()=>{
+    const counter = useSelector(state => state.user);
+    // console.log(allRedux);
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        console.log("rendered");
+        // dispatch(loginAction('himanshu@gmail.com', 'password'));
+    });
+
+    const onSubmitLogin = (e)=>{
+        e.preventDefault();
+        dispatch(loginAction('himanshu@gmail.com', 'password'));
+        // console.log(allActions);
+        // dispatch(allActions.increment());
+        // dispatch(loginAction('himanshu@gmail.com', 'password'));
+    }
+
     return(
         <main id="tt-pageContent" className="tt-offset-none">
             <div className="container">
@@ -18,6 +37,7 @@ export default ()=>{
                         <form className="form-default">
                             <div className="form-group">
                                 <label for="loginUserName">Username</label>
+                                <h1>Counter: {counter}</h1>
                                 <input type="text" name="name" className="form-control" id="loginUserName" placeholder="azyrusmax"/>
                             </div>
                             <div className="form-group">
@@ -42,7 +62,7 @@ export default ()=>{
                                 </div>
                             </div>
                             <div className="form-group">
-                                <a href="page-login.html#" className="btn btn-secondary btn-block">Log in</a>
+                                <a href="page-login.html#" className="btn btn-secondary btn-block" onClick={onSubmitLogin}>Log in</a>
                             </div>
                             <p>Or login with social network</p>
                             <div className="row">

@@ -2,7 +2,7 @@ import express from 'express'
 import path from 'path'
 import bodyParser from 'body-parser'
 import Template from './../template.js'
-// import postsRoutes from './routes/posts.routes'
+import userRoutes from './routes/user.routes'
 import cors from 'cors'
 // import './services/cache'
 
@@ -24,7 +24,7 @@ devBundle.compile(app);
 
 app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 
-// app.use('/api', postsRoutes(express.Router()));
+app.use('/api', userRoutes(express.Router()));
 
 app.get('*', (req, res)=>{
   res.send(Template());
