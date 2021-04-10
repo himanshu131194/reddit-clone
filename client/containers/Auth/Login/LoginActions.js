@@ -1,4 +1,5 @@
 import { LOGIN_SUCCESS, LOGIN_FAILURE } from './LoginActionTypes';
+import Axios from '../../../Axios/AxiosConfig';
 
 const loginSuccess = (payload) => {
     return {
@@ -16,6 +17,7 @@ const loginFailure = (payload) => {
 
 export const loginAction = (email, password) => {
     return dispatch => {
+        console.log(Axios.get)
         dispatch(loginSuccess({
             user: {name: 'himanshu'},
             error: null
